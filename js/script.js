@@ -46,7 +46,6 @@ let enter_task = () => {
     //     // pass
     // }
 };
-
 function getAvail() {
     let days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
     let avail = [];
@@ -56,7 +55,6 @@ function getAvail() {
     });
     return avail;
 }
-
 $(function(){
     $(":submit").click(function(){
         var elmt=document.getElementById('form');
@@ -71,7 +69,6 @@ $(function(){
         })
     });
 });
-
 function displayRange(day) {
     let value = document.getElementById(day + '-hrs').value;
     let label = document.getElementById(day + '-lbl');
