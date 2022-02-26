@@ -1,15 +1,10 @@
 body {
     font-family: sans-serif;
-    padding: 2rem 2rem;
+    /* padding: 2rem 2rem; */
 }
 
 form {
     float:left;
-    padding-left: 24rem;
+    padding-left: 10rem;
 
-}
-
-week {
-    float:right;
-    padding-right: 24rem;
 }
