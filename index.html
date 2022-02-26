@@ -4,277 +4,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js/script.js" async></script>
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Schedule Builder</title>
 </head>
-<style>
-    table, th, td {
-        border:1px solid black;
-    }
-</style>
 <body>
     <form>
         <h3>Enter Task</h3>
         <input type="text" id="task"><br>
-        <h3>How long will it take (in hours)?</h3>
-        <input type="text" id="time"><br><br>
-        <input type="button" value="Enter task">
+        <h3>What Day?</h3>
+        <select id="days">
+            <option value="select">(select the day of the week)</option>
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Thursday">Friday</option>
+            <option value="Thursday">Saturday</option>
+        </select>
+        <h3>How long will it take?</h3>
+        <label>Hours: </label>
+        <select id="hours">
+            <option value="select">(select the hours)</option>
+            <option value="0h">0</option>
+            <option value="1h">1</option>
+            <option value="2h">2</option>
+            <option value="3h">3</option>
+            <option value="4h">4</option>
+            <option value="5h">5</option>
+            <option value="6h">6</option>
+            <option value="7h">7</option>
+            <option value="8h">8</option>
+            <option value="9h">9</option>
+            <option value="10h">10</option>
+            <option value="11h">11</option>
+            <option value="12h">12</option>
+            <option value="13h">13</option>
+            <option value="14h">14</option>
+            <option value="15h">15</option>
+            <option value="16h">16</option>
+            <option value="17h">17</option>
+            <option value="18h">18</option>
+            <option value="19h">19</option>
+            <option value="20h">20</option>
+            <option value="21h">21</option>
+            <option value="22h">22</option>
+            <option value="23h">23</option>
+        </select><br><br>
+        <label>Minutes: </label>
+        <select id="minutes">
+            <option value="select">(select the minutes)</option>
+            <option value="0m">0</option>
+            <option value="1m">1</option>
+            <option value="2m">2</option>
+            <option value="3m">3</option>
+            <option value="4m">4</option>
+            <option value="5m">5</option>
+            <option value="6m">6</option>
+            <option value="7m">7</option>
+            <option value="8m">8</option>
+            <option value="9m">9</option>
+            <option value="10m">10</option>
+            <option value="11m">11</option>
+            <option value="12m">12</option>
+            <option value="13m">13</option>
+            <option value="14m">14</option>
+            <option value="15m">15</option>
+            <option value="16m">16</option>
+            <option value="17m">17</option>
+            <option value="18m">18</option>
+            <option value="19m">19</option>
+            <option value="20m">20</option>
+            <option value="21m">21</option>
+            <option value="22m">22</option>
+            <option value="23m">23</option>
+            <option value="24m">24</option>
+            <option value="25m">25</option>
+            <option value="26m">26</option>
+            <option value="27m">27</option>
+            <option value="28m">28</option>
+            <option value="29m">29</option>
+            <option value="30m">30</option>
+            <option value="31m">31</option>
+            <option value="32m">32</option>
+            <option value="33m">33</option>
+            <option value="34m">34</option>
+            <option value="35m">35</option>
+            <option value="36m">36</option>
+            <option value="37m">37</option>
+            <option value="38m">38</option>
+            <option value="39m">39</option>
+            <option value="40m">40</option>
+            <option value="41m">41</option>
+            <option value="42m">42</option>
+            <option value="43m">43</option>
+            <option value="44m">44</option>
+            <option value="45m">45</option>
+            <option value="46m">46</option>
+            <option value="47m">47</option>
+            <option value="48m">48</option>
+            <option value="49m">49</option>
+            <option value="50m">50</option>
+            <option value="51m">51</option>
+            <option value="52m">52</option>
+            <option value="53m">53</option>
+            <option value="54m">54</option>
+            <option value="55m">55</option>
+            <option value="56m">56</option>
+            <option value="57m">57</option>
+            <option value="58m">58</option>
+            <option value="59m">59</option>
+        </select><br><br>
+        <input type="button" id="enter-task" value="Enter task" onclick="enter_task()">
     </form>
-    <br>
-    <calendar>
+    <week>
         <h3>How long can you work?</h3>
-        <table>
-            <tr id="days">
-                <th></th>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-            </tr>
-            <tr id="12am">
-                <th>12:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="1am">
-                <th>1:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="2am">
-                <th>2:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="3am">
-                <th>3:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="4am">
-                <th>4:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="5am">
-                <th>5:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="6am">
-                <th>6:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="7am">
-                <th>7:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="8am">
-                <th>8:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="9am">
-                <th>9:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="10am">
-                <th>10:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="11am">
-                <th>11:00 am</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="12pm">
-                <th>12:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="1pm">
-                <th>1:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="2pm">
-                <th>2:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="3pm">
-                <th>3:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="4pm">
-                <th>4:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="5pm">
-                <th>5:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="6pm">
-                <th>6:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="7pm">
-                <th>7:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="8pm">
-                <th>8:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="9pm">
-                <th>9:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="10pm">
-                <th>10:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr id="11pm">
-                <th>11:00 pm</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </table>
-    </calendar><br>
-    <input type="submit" value="Generate Schedule">
+        <h4>Sunday</h4>
+        <div id="sunday"></div>
+        <h4>Monday</h4>
+        <div id="monday"></div>
+        <h4>Tuesday</h4>
+        <div id="tuesday"></div>
+        <h4>Wednesday</h4>
+        <div id="wednesday"></div>
+        <h4>Thursday</h4>
+        <div id="thursday"></div>
+        <h4>Friday</h4>
+        <div id="friday"></div>
+        <h4>Saturday</h4>
+        <div id="saturday"></div>
+        <input type="submit" value="Generate Schedule">
+    </week><br>
 </body>
 </html>
