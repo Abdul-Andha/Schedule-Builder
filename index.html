@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="./js/script.js" async></script>
     <script type="text/javascript" src="./js/schedule.js" async></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -19,13 +21,13 @@
         <a id="nav" class="navbar-brand" href="https://schedulebuilder.tech/">
             <div id="logo">
                 <img src="img/icon.png" width="60" height="60" alt="Schedule Builder">
-            </div>  
+            </div>
         </a>
     </nav>
     <header>
         <div id="box">
             <h1 id="title">Schedule Builder</h1>
-            <input type="button" id="add-schedule" class="btn btn-primary" value="Add Schedule" onclick="scroll_down()">
+            <a href="#task-form" class="btn btn-primary">Make Schedule</a>
         </div>
     </header>
     <form id="task-form">
@@ -126,34 +128,56 @@
                 <option value="59m">59</option>
             </select><br>
             <input class="btn btn-primary" type="button" id="enter-task" value="Enter task" onclick="enter_task()">
+            <br><br>
+            <h5 id="error-msg1"></h5>
         </div>
-        <div class="form-week week">
+        <div id="task-box">
+            <input class="btn btn-light" type="button" id="check_all" onclick="check_all_fun()" value="check all"></input>
+            <input class="btn btn-light" type="button" id="inverse" onclick="inverse_fun()" value="inverse"></input>
+            <input class="btn btn-danger" type="button" id="delete" onclick="delete_task()" value="delete"></input>
+            <ul id="task-list">
+            </ul>
+        </div>
+        <week>
             <h3>How long can you work?</h3>
             <h4>Monday</h4>
-            <input oninput="displayRange('monday')" type="range" id="monday-hrs" min="0" max="12" value="0" class="form-range">
+            <input oninput="displayRange('monday')" type="range" id="monday-hrs" min="0" max="12" value="0"
+                class="form-range">
             <label id="monday-lbl" for="monday-hrs">0 Hours</label>
             <h4>Tuesday</h4>
-            <input oninput="displayRange('tuesday')" type="range" id="tuesday-hrs" min="0" max="12" value="0" class="form-range">
+            <input oninput="displayRange('tuesday')" type="range" id="tuesday-hrs" min="0" max="12" value="0"
+                class="form-range">
             <label id="tuesday-lbl" for="tuesday-hrs">0 Hours</label>
             <h4>Wednesday</h4>
-            <input oninput="displayRange('wednesday')" type="range" id="wednesday-hrs" min="0" max="12" value="0" class="form-range">
+            <input oninput="displayRange('wednesday')" type="range" id="wednesday-hrs" min="0" max="12" value="0"
+                class="form-range">
             <label id="wednesday-lbl" for="wednesday-hrs">0 Hours</label>
             <h4>Thursday</h4>
-            <input oninput="displayRange('thursday')" type="range" id="thursday-hrs" min="0" max="12" value="0" class="form-range">
+            <input oninput="displayRange('thursday')" type="range" id="thursday-hrs" min="0" max="12" value="0"
+                class="form-range">
             <label id="thursday-lbl" for="thursday-hrs">0 Hours</label>
             <h4>Friday</h4>
-            <input oninput="displayRange('friday')" type="range" id="friday-hrs" min="0" max="12" value="0" class="form-range">
+            <input oninput="displayRange('friday')" type="range" id="friday-hrs" min="0" max="12" value="0"
+                class="form-range">
             <label id="friday-lbl" for="friday-hrs">0 Hours</label>
             <h4>Saturday</h4>
-            <input oninput="displayRange('saturday')" type="range" id="saturday-hrs" min="0" max="12" value="0" class="form-range">
+            <input oninput="displayRange('saturday')" type="range" id="saturday-hrs" min="0" max="12" value="0"
+                class="form-range">
             <label id="saturday-lbl" for="saturday-hrs">0 Hours</label>
             <h4>Sunday</h4>
-            <input oninput="displayRange('sunday')" type="range" id="sunday-hrs" min="0" max="12" value="0" class="form-range">
+            <input oninput="displayRange('sunday')" type="range" id="sunday-hrs" min="0" max="12" value="0"
+                class="form-range">
             <label id="sunday-lbl" for="sunday-hrs">0 Hours</label>
             <br><br>
-            <input class="btn btn-secondary" onclick="main()" type="submit" value="Generate Schedule"><br>
-            <h1 id="error-msg"></h1>
+            <input class="btn btn-info" onclick="main()" type="button" value="Generate Schedule"><br>
+        </week><br>
+        <h4 id="error-msg2"></h4>
         </div>
-    </form>
+        <div id="schedule">
+            <ul id="schedule-list">
+            </ul>
+        </div>
+    </form><br><br>
+    <div id="creators">Created by Abdul Andha, Andy Cordero, Chiagoziem Mba-Oji and Trotyl Hu</div><br><br>
 </body>
 </html>

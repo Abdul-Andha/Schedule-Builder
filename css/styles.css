@@ -28,15 +28,42 @@ header {
 }
 
 #task-form {
+    position: absolute;
+    left: 10%;
     background: rgb(34,193,195);
     background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
-    padding-top: 40px;
-    padding-right: 180px;
+    border-radius: 3em;
+    padding-top: 30px;
     display: flex;
-    width: 50%;
+    height: 50em;
+    width: 80%;
 }
 
-form{
-    float: left;
-    padding-left: 10rem;
+form, week, #task-box{
+    display: inline-block;
+    padding-left: 3rem;
+    vertical-align:top;
+}
+#task-box{
+    padding-left: 1rem;
+    width: 23%;
+}
+ul {
+    list-style: none;
+    line-height: 30px;
+}
+#check_all{
+    margin-left: 40px;
+}
+#error-msg1, #error-msg2{
+    color: red;
+}
+
+#creators {
+    text-align: center;
+    text-shadow: 2px 2px black;
+    color: white;
+    font-size: 20px;
+    padding-top: 40em;
+    bottom: 0;
 }
