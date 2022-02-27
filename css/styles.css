@@ -39,4 +39,27 @@ header {
 form{
     float: left;
     padding-left: 10rem;
+    font-family: sans-serif;
+    /* padding: 2rem 2rem; */
+}
+
+form, week, task{
+    
+    display: inline-block;
+    padding-left: 5rem;
+    vertical-align:top;
+}
+task{
+    padding-left: 1rem;
+    width: 18%;
+}
+ul {
+    list-style: none;
+    line-height: 30px;
+}
+#check_all{
+    margin-left: 40px;
+}
+#error-msg1{
+    color: red;
 }
