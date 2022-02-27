@@ -1,3 +1,3 @@
 # Schedule-Builder
 
-This project is for HackNYU
+This project is for HackNYU2022
