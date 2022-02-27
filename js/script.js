@@ -22,25 +22,24 @@ let enter_task = () => {
 };
 
 let delete_task = () => {
-    for(var i=0;i<$(":checkbox").length;i++){
+    for (var i = 0; i < $(":checkbox").length; i++) {
         if ($(":checkbox")[i].checked) {
             $($(":checkbox")[i]).closest('li').remove();
             i--;
         }
     }
 };
-
-let check_all =()=>{
-    for(var i=0;i<$(":checkbox").length;i++){
-        $(":checkbox")[i].checked=true;
+let check_all_fun = () => {
+    for (var i = 0; i < $(":checkbox").length; i++) {
+        $(":checkbox")[i].checked = true;
     }
-}
+};
 
-let inverse =()=>{
-    for(var i=0;i<$(":checkbox").length;i++){
-        $(":checkbox")[i].checked=!$(":checkbox")[i].checked;
+let inverse_fun = () => {
+    for (var i = 0; i < $(":checkbox").length; i++) {
+        $(":checkbox")[i].checked = !$(":checkbox")[i].checked;
     }
-}
+};
 
 
 function getAvail() {
@@ -51,7 +50,8 @@ function getAvail() {
         avail.push(dailyVal * 60);
     });
     return avail;
-}
+};
+
 function displayRange(day) {
     let value = document.getElementById(day + '-hrs').value;
     let label = document.getElementById(day + '-lbl');
