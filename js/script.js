@@ -1,16 +1,5 @@
-let tasks = [];
-
 let enter_task = () => {
     const taskDesc = document.getElementById("task").value;
-<<<<<<< Updated upstream
-    const hours = document.getElementById("hours").value;
-    const minutes = document.getElementById("minutes").value;
-    
-    let taskEntry = {
-        description: taskDesc,
-        minutes: (hours * 60) + parseInt(minutes),
-        scheduledMins: 0
-=======
     const hours = (document.getElementById("hours").value == "select") ? "0h" : document.getElementById("hours").value;
     const minutes = (document.getElementById("minutes").value == "select") ? "0m" : document.getElementById("minutes").value;
     try {
@@ -20,6 +9,7 @@ let enter_task = () => {
         if (parseInt(hours) * 60 + parseInt(minutes) == 0) {
             throw "Please enter a valid duration";
         }
+
         //create task
         let task = {
             description: taskDesc,
@@ -46,46 +36,8 @@ let delete_task = () => {
             $($(":checkbox")[i]).closest('li').remove();
             i--;
         }
->>>>>>> Stashed changes
     }
-    
-    tasks.push(taskEntry);
-    document.getElementById("task-form").reset;
-    
-    // if (day == "Sunday") {
-    //     let ele = document.getElementById("sunday");
-    //     ele.innerHTML += task + " for " + hour + " and " + minute + "<br>";
-    // }
-    // else if (day == "Monday") {
-    //     let ele = document.getElementById("monday");
-    //     ele.innerHTML += task + " for " + hour + " and " + minute + "<br>";
-    // }
-    // else if (day == "Tuesday") {
-    //     let ele = document.getElementById("tuesday");
-    //     ele.innerHTML += task + " for " + hour + " and " + minute + "<br>";
-    // }
-    // else if (day == "Wednesday") {
-    //     let ele = document.getElementById("wednesday");
-    //     ele.innerHTML += task + " for " + hour + " and " + minute + "<br>";
-    // }
-    // else if (day == "Thursday") {
-    //     let ele = document.getElementById("thursday");
-    //     ele.innerHTML += task + " for " + hour + " and " + minute + "<br>";
-    // }
-    // else if (day == "Friday") {
-    //     let ele = document.getElementById("friday");
-    //     ele.innerHTML += task + " for " + hour + " and " + minute + "<br>";
-    // }
-    // else if (day == "Saturday") {
-    //     let ele = document.getElementById("saturday");
-    //     ele.innerHTML += task + " for " + hour + " and " + minute + "<br>";
-    // }
-    // else {
-    //     // pass
-    // }
 };
-<<<<<<< Updated upstream
-=======
 
 let check_all =()=>{
     for(var i=0;i<$(":checkbox").length;i++){
@@ -99,7 +51,6 @@ let inverse =()=>{
     }
 }
 
->>>>>>> Stashed changes
 function getAvail() {
     let days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
     let avail = [];
@@ -109,20 +60,6 @@ function getAvail() {
     });
     return avail;
 }
-$(function(){
-    $(":submit").click(function(){
-        var elmt=document.getElementById('form');
-        domtoimage.toPng(elmt)
-        .then(function(dataUrl){
-            var img=new Image();
-            img.src=dataUrl;
-            document.body.appendChild(img);
-        })
-        .catch(function(error){
-            console.error('error function', error);
-        })
-    });
-});
 function displayRange(day) {
     let value = document.getElementById(day + '-hrs').value;
     let label = document.getElementById(day + '-lbl');

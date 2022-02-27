@@ -1,25 +1,57 @@
 body {
-    font-family: sans-serif;
-    padding: 2rem 2rem;
+    font-family: 'Lato', sans-serif;
+    background-image: url("../img/background.png");
+    background-size: 100%;
 }
 
-<<<<<<< Updated upstream
+header {
+    text-align: center;
+    margin-top: 17%;
+    margin-right: 55%;
+    margin-bottom: 40%;
+}
+
+#title {
+    color: white;
+}
+
+#logo {
+    padding-left: 30px;
+}
+
 form {
     float:left;
     padding-left: 24rem;
 
+#box {
+    background: rgb(34,193,195);
+    background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
+    border-radius: 3em;
+    padding: 1em;
+    margin-left: 15em;
 }
+
+#task-form {
+    background: rgb(34,193,195);
+    background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
+    padding-top: 40px;
+    padding-right: 180px;
+    display: flex;
+    width: 50%;
+}
+
 
 week {
     float:right;
     padding-right: 24rem;
-=======
-form, week, task, #schedule{
-    
-    display: inline-block;
-    padding-left: 5rem;
-    vertical-align:top;
+
+form{
+    float: left;
+    padding-left: 10rem;
+    font-family: sans-serif;
+    /* padding: 2rem 2rem; */
 }
+
 task{
     padding-left: 1rem;
     width: 18%;
@@ -33,5 +65,3 @@ ul {
 }
 #error-msg1, #error-msg2 {
     color: red;
->>>>>>> Stashed changes
-}
