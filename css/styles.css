@@ -28,9 +28,12 @@ header {
 }
 
 #task-form {
+    position: absolute;
+    left: 5%;
     background: rgb(34,193,195);
     background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
-    padding-top: 40px;
+    border-radius: 3em;
+    padding-top: 30px;
     display: flex;
     width: 90%;
 }
@@ -54,6 +57,20 @@ ul {
 #error-msg1, #error-msg2{
     color: red;
 }
+
+#creators {
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 black;
+    color: white;
+    font-size: 15px;
+    padding-top: 20em;
+    bottom: 0;
+}
+a{
+    text-decoration: none;
+    color: palegoldenrod;
+}
 #schedule{
     width: 23%;
     padding: 1rem;
@@ -68,6 +85,6 @@ ul {
     margin-top: 10px;
 } */
 #sch-to-export{
-    
+    border-radius: 5px;
     background: linear-gradient(30deg, rgba(69, 252, 255, 0.521) 0%, rgba(255, 224, 88, 0.698) 100%);
 }
