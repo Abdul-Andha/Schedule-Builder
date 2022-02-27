@@ -1,8 +1,4 @@
 //global variables
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 let avail;
 let tasks = [];
 let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -13,7 +9,6 @@ function main() {
   document.getElementById('schedule-list').innerHTML = "";
   let errorMsg = document.getElementById('error-msg2');
   errorMsg.innerHTML = "";
-<<<<<<< Updated upstream
 
   //early return
   avail = getAvail();
@@ -29,23 +24,6 @@ function main() {
   }  
   
   //make and display schedule
-=======
-
-  //early return
-  avail = getAvail();
-  let totalAvail = avail.reduce((a, b) => a + b, 0);
-  
-  if (tasks.length == 0) {
-    errorMsg.innerHTML = "There are no tasks. Please enter a task."
-    return;
-  }
-  let totalMins = getTotalMins();
-  if (totalAvail < totalMins) {
-    errorMsg.innerHTML = "You dont have enough availability to generate a schedule. Please increase your availability.";
-    return;
-  }  
-
->>>>>>> Stashed changes
   let week = getWeek(totalMins, totalAvail);
   let schedule = getSchedule(week);
   displaySchedule(schedule);
