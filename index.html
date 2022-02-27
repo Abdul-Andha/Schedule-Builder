@@ -176,48 +176,11 @@
                 class="form-range">
             <label id="sunday-lbl" for="sunday-hrs">0 Hours</label>
             <br><br>
-            <input class="btn btn-secondary" type="button" onclick="main()" value="Generate Schedule">
-            <h4 id="error-msg2"></h4>
+            <input class="btn btn-secondary" onclick="main()" type="submit" value="Generate Schedule"><br>
         </week><br>
-        </div>
-        <div id="schedule">
-            <ul id="schedule-list">
-    
-            </ul>
+        <h1 id="error-msg"></h1>
         </div>
     </form>
-    <week>
-        <h3>How long can you work?</h3>
-        <h4>Monday</h4>
-        <input oninput="displayRange('monday')" type="range" id="monday-hrs" min="0" max="12" value="0">
-        <label id="monday-lbl" for="monday-hrs">0 Hours</label>
-        <h4>Tuesday</h4>
-        <input oninput="displayRange('tuesday')" type="range" id="tuesday-hrs" min="0" max="12" value="0">
-        <label id="tuesday-lbl" for="tuesday-hrs">0 Hours</label>
-        <h4>Wednesday</h4>
-        <input oninput="displayRange('wednesday')" type="range" id="wednesday-hrs" min="0" max="12" value="0">
-        <label id="wednesday-lbl" for="wednesday-hrs">0 Hours</label>
-        <h4>Thursday</h4>
-        <input oninput="displayRange('thursday')" type="range" id="thursday-hrs" min="0" max="12" value="0">
-        <label id="thursday-lbl" for="thursday-hrs">0 Hours</label>
-        <h4>Friday</h4>
-        <input oninput="displayRange('friday')" type="range" id="friday-hrs" min="0" max="12" value="0">
-        <label id="friday-lbl" for="friday-hrs">0 Hours</label>
-        <h4>Saturday</h4>
-        <input oninput="displayRange('saturday')" type="range" id="saturday-hrs" min="0" max="12" value="0">
-        <label id="saturday-lbl" for="saturday-hrs">0 Hours</label>
-        <h4>Sunday</h4>
-        <input oninput="displayRange('sunday')" type="range" id="sunday-hrs" min="0" max="12" value="0">
-        <label id="sunday-lbl" for="sunday-hrs">0 Hours</label>
-        <br><br>
-        <input onclick="main()" type="submit" value="Generate Schedule">
-        <h4 id="error-msg2"></h4>
-    </week>
-    <div id="schedule">
-        <ul id="schedule-list">
-
-        </ul>
-    </div>
 </body>
 
 </html>
