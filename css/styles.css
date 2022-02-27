@@ -32,7 +32,7 @@ header {
     background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
     padding-top: 40px;
     display: flex;
-    width: 80%;
+    width: 90%;
 }
 
 form, week, #task-box{
@@ -53,4 +53,21 @@ ul {
 }
 #error-msg1, #error-msg2{
     color: red;
+}
+#schedule{
+    width: 23%;
+    padding: 1rem;
+}
+#download{
+    height: 40;
+    width: 40px;
+    background-color:rgba(127, 255, 212, 0.363);
+    margin-left: 20px;
+}
+/* #schedule-list{
+    margin-top: 10px;
+} */
+#sch-to-export{
+    
+    background: linear-gradient(30deg, rgba(69, 252, 255, 0.521) 0%, rgba(255, 224, 88, 0.698) 100%);
 }
