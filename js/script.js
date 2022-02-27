@@ -9,6 +9,24 @@ let enter_task = () => {
         if (parseInt(hours) * 60 + parseInt(minutes) == 0) {
             throw "Please enter a valid duration";
         }
+<<<<<<< Updated upstream
+
+        //create task
+=======
+        //create tasks
+>>>>>>> Stashed changes
+        let task = {
+            description: taskDesc,
+            minutes: parseInt(hours) * 60 + parseInt(minutes),
+            scheduledMins: 0
+        }
+        tasks.push(task);
+<<<<<<< Updated upstream
+        //display task
+=======
+
+        //display tasks
+>>>>>>> Stashed changes
         let ele = document.getElementById("task-list");
         ele.innerHTML += "<li><input name='checkbox' type='checkbox'>" + taskDesc + " for " + hours + " and " + minutes + "</li>";
         //reset input
@@ -40,7 +58,6 @@ let inverse_fun = () => {
         $(":checkbox")[i].checked = !$(":checkbox")[i].checked;
     }
 };
-
 
 function getAvail() {
     let days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];

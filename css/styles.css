@@ -19,6 +19,10 @@ header {
     padding-left: 30px;
 }
 
+form {
+    float:left;
+    padding-left: 24rem;
+}
 #box {
     background: rgb(34,193,195);
     background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
@@ -31,18 +35,26 @@ header {
     background: rgb(34,193,195);
     background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
     padding-top: 40px;
+    padding-right: 180px;
     display: flex;
-    width: 80%;
+    width: 50%;
 }
 
-form, week, #task-box{
-    display: inline-block;
-    padding-left: 3rem;
-    vertical-align:top;
+
+week {
+    float:right;
+    padding-right: 24rem;
 }
-#task-box{
+form{
+    float: left;
+    padding-left: 10rem;
+    font-family: sans-serif;
+    /* padding: 2rem 2rem; */
+}
+
+task{
     padding-left: 1rem;
-    width: 23%;
+    width: 18%;
 }
 ul {
     list-style: none;
@@ -51,6 +63,6 @@ ul {
 #check_all{
     margin-left: 40px;
 }
-#error-msg1{
+#error-msg1, #error-msg2{
     color: red;
 }
