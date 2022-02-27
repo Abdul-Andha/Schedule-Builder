@@ -22,7 +22,7 @@ header {
 form {
     float:left;
     padding-left: 24rem;
-
+}
 #box {
     background: rgb(34,193,195);
     background: linear-gradient(61deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
@@ -44,7 +44,7 @@ form {
 week {
     float:right;
     padding-right: 24rem;
-
+}
 form{
     float: left;
     padding-left: 10rem;
@@ -63,9 +63,6 @@ ul {
 #check_all{
     margin-left: 40px;
 }
-<<<<<<< Updated upstream
-#error-msg1, #error-msg2 {
-=======
 #error-msg1, #error-msg2{
->>>>>>> Stashed changes
     color: red;
+}
