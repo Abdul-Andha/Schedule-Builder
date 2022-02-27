@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 //test data
 // let tasks = [
 //   {
@@ -36,27 +37,37 @@
 //     scheduledMins: 0
 //   },
 // ];
+=======
+//global variables
+>>>>>>> Stashed changes
 let avail;
+let tasks = [];
 let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 function main() {
+  //initialize
+  tasks.forEach(task => task.scheduledMins = 0);
+  document.getElementById('schedule-list').innerHTML = "";
+  let errorMsg = document.getElementById('error-msg2');
+  errorMsg.innerHTML = "";
+
   //early return
-  let errorMsg = document.getElementById('error-msg');
   avail = getAvail();
   let totalAvail = avail.reduce((a, b) => a + b, 0);
-  let totalMins = getTotalMins();
-
+  
   if (tasks.length == 0) {
-    errorMsg.innerHTML = "Please enter a task."
+    errorMsg.innerHTML = "There are no tasks. Please enter a task."
     return;
   }
+  let totalMins = getTotalMins();
   if (totalAvail < totalMins) {
     errorMsg.innerHTML = "You dont have enough availability to generate a schedule. Please increase your availability.";
     return;
   }  
 
   let week = getWeek(totalMins, totalAvail);
-  getSchedule(week);
+  let schedule = getSchedule(week);
+  displaySchedule(schedule);
 }
 
 function getWeek(totalMins, totalAvail) {
@@ -73,9 +84,9 @@ function getWeek(totalMins, totalAvail) {
 }
 
 function getSchedule(week) {
-  let schedule = "";
+  let schedule = [];
   week.forEach(day => {
-    schedule += day.name + "\n";
+    let dailySchedule = [];
     let leftOverTime = day.workMins;
     while (leftOverTime > 0) {
       let targetTask = tasks.find(task => task.scheduledMins < task.minutes);
@@ -84,16 +95,28 @@ function getSchedule(week) {
       if (leftOverTime >= unscheduledMins) {
         targetTask.scheduledMins += unscheduledMins;
         leftOverTime -= unscheduledMins;
-        schedule += targetTask.description + ` for ${formatTime(unscheduledMins)}\n`;
+        dailySchedule.push(targetTask.description + ` for ${formatTime(unscheduledMins)}`);
       } else {
         targetTask.scheduledMins += leftOverTime;
-        schedule += targetTask.description + ` for ${formatTime(leftOverTime)}\n`;
+        dailySchedule.push(targetTask.description + ` for ${formatTime(leftOverTime)}`);
         leftOverTime = 0;
       }
     }
-    schedule += "\n";
-  })
-  console.log(schedule);
+    schedule.push(dailySchedule);
+  });
+  return schedule;
+}
+
+function displaySchedule(schedule) {
+  let scheduleList = document.getElementById('schedule-list');
+  for (let i = 0; i < schedule.length; i++) {
+    let dailyTasks = schedule[i];
+    if (dailyTasks.length == 0) continue;
+    scheduleList.innerHTML += "<li>" + days[i] + "</li>";
+    dailyTasks.forEach(task => {
+      scheduleList.innerHTML += "<li>" + "- " + task + "</li>";
+    })
+  }
 }
 
 function getTotalMins() {

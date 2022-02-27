@@ -3,6 +3,7 @@ body {
     padding: 2rem 2rem;
 }
 
+<<<<<<< Updated upstream
 form {
     float:left;
     padding-left: 24rem;
@@ -12,4 +13,25 @@ form {
 week {
     float:right;
     padding-right: 24rem;
+=======
+form, week, task, #schedule{
+    
+    display: inline-block;
+    padding-left: 5rem;
+    vertical-align:top;
+}
+task{
+    padding-left: 1rem;
+    width: 18%;
+}
+ul {
+    list-style: none;
+    line-height: 30px;
+}
+#check_all{
+    margin-left: 40px;
+}
+#error-msg1, #error-msg2 {
+    color: red;
+>>>>>>> Stashed changes
 }
