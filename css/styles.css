@@ -63,5 +63,9 @@ ul {
 #check_all{
     margin-left: 40px;
 }
+<<<<<<< Updated upstream
 #error-msg1, #error-msg2 {
+=======
+#error-msg1, #error-msg2{
+>>>>>>> Stashed changes
     color: red;

@@ -166,9 +166,14 @@
             <input oninput="displayRange('sunday')" type="range" id="sunday-hrs" min="0" max="12" value="0" class="form-range">
             <label id="sunday-lbl" for="sunday-hrs">0 Hours</label>
             <br><br>
-            <input class="btn btn-secondary" onclick="main()" type="submit" value="Generate Schedule"><br>
+            <input class="btn btn-secondary" type="button" onclick="main()" value="Generate Schedule">
+            <h4 id="error-msg2"></h4>
         </week><br>
-        <h1 id="error-msg"></h1>
+        </div>
+        <div id="schedule">
+            <ul id="schedule-list">
+    
+            </ul>
         </div>
     </form>
     <week>
