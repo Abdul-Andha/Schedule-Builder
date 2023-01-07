@@ -8,7 +8,7 @@ the user's availability and presents them with a schedule they can follow to mak
 
 ### App Demo
 
-<img src="img/demo.gif" width=800><br>
+<img src="assets/demo.gif" width=800><br>
 
 ### Features
 
